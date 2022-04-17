@@ -27,7 +27,10 @@
           <img class="img-fluid" src="/imgs/IMPAQT biotelemetry.jpg"/>
         </div>
         <hr>
-        <h2 id="quicktakeway"> <fa :icon="['fa','dice-d20']" style="color: #005cbf" />  Quick takeaway</h2>
+        <h2 id="quicktakeway">
+          <fa :icon="['fa','dice-d20']" style="color: #02e3bf"/>
+          Quick takeaway
+        </h2>
         <p align="justify" class="mt-3" style="color: #1c7430">
           <b>1- What is the problem that we are focusing on?</b>
         </p>
@@ -44,7 +47,8 @@
           methods, such as real-time monitoring of fish health, seaweed or water quality. Our second target is to build
           novel, miniaturized sensors based on our miniaturized transceiver modules. We are hoping to help farmers in
           following areas : Non-stop, real-time monitoring of the sites, Early disease detection using <b>respiratory
-          frequency monitoring, feeding optimization, fish stress detection</b> and <b>seaweed growth optimization </b>. However, we
+          frequency monitoring, feeding optimization, fish stress detection</b> and <b>seaweed growth optimization </b>.
+          However, we
           are at the early stage of technology development; these points are the hypothesis that we are planning working
           on.
         </p>
@@ -52,7 +56,8 @@
           <b>3- At what stage we are?</b>
         </p>
         <p align="justify" class="mt-3 ml-4">
-          Currently, <b>we have the prototype of our system ready</b>. We are working closely with our partners in the IMPAQT
+          Currently, <b>we have the prototype of our system ready</b>. We are working closely with our partners in the
+          IMPAQT
           project, Marine Institute and others, to test and improve the devices. We will also deploy some of the
           developed sensors in West Galway for data collection and testing soon.
         </p>
@@ -60,7 +65,8 @@
           <b>4- What are we looking for?</b>
         </p>
         <p align="justify" class="mt-3 ml-4">
-          <b>At the moment we are looking for any potential stakeholders to discuss with</b>, regarding what they need most,
+          <b>At the moment we are looking for any potential stakeholders to discuss with</b>, regarding what they need
+          most,
           what would be the optimal solution they are looking for and what would be their ideal definition of a novel
           miniaturized monitoring sensor. We are also open to any partnership from the industry for collaboration on the
           problems and providing the solutions. We would be happy to plan a virtual meeting (considering the current
@@ -90,6 +96,36 @@
           developing an underwater telemetry platform and we are developing a novel
           telemetry platform to tackle the discussed issues.
         </p>
+
+        <h2>
+          <fa :icon="['fa','cubes']" style="color: #b87aff"/>
+          Do you need more information ?
+        </h2>
+        <h4 class="mt-3">
+          - Recent publications :
+        </h4>
+        <ul>
+          <li>
+            IMPAQT Miniaturized Underwater Acoustic Telemetry Platform: Transmitter Node System Design -<a href="https://www.iaria.org/conferences2020/awardsSENSORCOMM20/sensorcomm2020_a2.pdf">Best Paper Award</a>- <a
+            href="https://www.thinkmind.org/index.php?view=article&articleid=sensorcomm_2020_1_60_10031"> Open Access -
+            Download From here</a> - <a href="https://www.iaria.org/conferences2020/filesSENSORCOMM20/10031_sensorcomm.pdf">Presentation File</a>
+            <div class="d-flex justify-content-center mt-3">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/ga25ChRNUwQ" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+              Presentation video
+            </div>
+          </li>
+
+          <li class="mt-5">
+            An Interview with Hamed Jafarzadeh, Tyndall National Institute of Ireland - To watch the interview <a href="https://iatip.ie/resources/interviews/hamedjafarzadeh/">click here</a>
+          </li>
+
+        </ul>
+
+
         <p align="justify" class="mt-3">
           <fa :icon="['fa','school']" style="color: #3b8070"/>
           I'm currently working in Tyndall national institute under supervision of <a

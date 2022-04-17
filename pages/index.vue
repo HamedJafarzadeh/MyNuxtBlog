@@ -18,13 +18,13 @@
                   <hr>
 
                   <p class="card-text my-auto" align="justify" style="font-size:  min(1.5vw,15px);">
-                    My name is Hamed. I am computer and electronics engineer with over 5 years of software and hardware
+                    My name is Hamed and I am computer and electronics engineer with over 5 years of software and hardware
                     programming
-                    experiences in industry and academic projects. <br/> Recently I watched the Big Bang theory series
+                    experience in industry and academic projects. <br/> Recently I watched the Big Bang theory series
                     and I realized how much I have in common with Sheldon 🤓
                     You know why? I started programming at age of 11 👶 and I released a serious software at age of 15
                     😅, my life is all around computers, electronics and sciences 😂
-                    I also feel deeply connected with Robots 🤖
+                    I also feel deeply connected with Robots 🤖.
                   </p>
                   <!--                  <a href="#" class="btn btn-primary">View Profile</a>-->
                 </div>

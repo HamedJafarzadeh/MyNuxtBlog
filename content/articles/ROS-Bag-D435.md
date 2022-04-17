@@ -1,4 +1,5 @@
 ---
+
 title: Record a ROS bag file of Intel Real sense D435
 description: Step by step tutorial for recording a dataset from Real Sense D435 in ROS
 img: /imgs/blog/noimagepost.jpg
@@ -6,21 +7,25 @@ lang: en
 publish: true
 createdAt: "2019-02-22T10:58:51.640Z"
 tags:
-  - Robotics
-  - ROS
+
+- Robotics
+- ROS
+
 ---
+
 If it is your first time, you need to make several configurations, please proceed to [First Time Setup](#first-time-setup).
 
 ## Quick check list :
 
 - Open your terminal and enter (I'm using terminator, which gives your better options to manage your terminal windows)
-
+  
   ```bash
   roscore
   ```
-- Open another terminal and run
 
- ```bash
+- Open another terminal and run
+  
+  ```bash
   roslaunch realsense2_camera rs_camera_record.launch
   ```
 
@@ -29,29 +34,26 @@ If it is your first time, you need to make several configurations, please procee
 ```bash
   cd thesisproject/realsense/rviz
   rviz pointcloud.rviz
-  ```
-
-
+```
 
 ## First Time Setup
 
 First you need to run `roscore`.
 
 - Open your terminal and enter (I'm using terminator, which gives your better options to manage your terminal windows)
-
+  
   ```bash
   roscore
   ```
 
 - after couple of seconds you should see following line which shows that ROS core started successfully.
-
-  ~~~bash
+  
+  ```bash
   started core service [/rosout]
-  ~~~
-
+  ```
 * now open another terminal (another tab in terminator) and change directory to your catkin source file, in my case it is located in `~\catkin_ws\src` and then change directory again to `~\catkin_ws\src\realsense\realsense2_camera\launch` and enter following command
 
-* ``` bash
+* ```bash
   nano rs_camera_record.launch
   ```
 
@@ -105,37 +107,37 @@ First you need to run `roscore`.
     <arg name="topic_odom_in"         default="odom_in"/>
     <arg name="calib_odom_file"       default=""/>
     <arg name="publish_odom_tf"       default="true"/>
-  
-    
+  ```
+
     <group ns="$(arg camera)">
       <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
         <arg name="tf_prefix"                value="$(arg tf_prefix)"/>
         <arg name="serial_no"                value="$(arg serial_no)"/>
         <arg name="json_file_path"           value="$(arg json_file_path)"/>
-  
+    
         <arg name="enable_pointcloud"        value="$(arg enable_pointcloud)"/>
         <arg name="pointcloud_texture_stream" value="$(arg pointcloud_texture_stream)"/>
         <arg name="pointcloud_texture_index"  value="$(arg pointcloud_texture_index)"/>
         <arg name="enable_sync"              value="$(arg enable_sync)"/>
         <arg name="align_depth"              value="$(arg align_depth)"/>
-  
+    
         <arg name="fisheye_width"            value="$(arg fisheye_width)"/>
         <arg name="fisheye_height"           value="$(arg fisheye_height)"/>
         <arg name="enable_fisheye"           value="$(arg enable_fisheye)"/>
-  
+    
         <arg name="depth_width"              value="$(arg depth_width)"/>
         <arg name="depth_height"             value="$(arg depth_height)"/>
         <arg name="enable_depth"             value="$(arg enable_depth)"/>
-  
+    
         <arg name="color_width"              value="$(arg color_width)"/>
         <arg name="color_height"             value="$(arg color_height)"/>
         <arg name="enable_color"             value="$(arg enable_color)"/>
-  
+    
         <arg name="infra_width"              value="$(arg infra_width)"/>
         <arg name="infra_height"             value="$(arg infra_height)"/>
         <arg name="enable_infra1"            value="$(arg enable_infra1)"/>
         <arg name="enable_infra2"            value="$(arg enable_infra2)"/>
-  
+    
         <arg name="fisheye_fps"              value="$(arg fisheye_fps)"/>
         <arg name="depth_fps"                value="$(arg depth_fps)"/>
         <arg name="infra_fps"                value="$(arg infra_fps)"/>
@@ -144,7 +146,7 @@ First you need to run `roscore`.
         <arg name="accel_fps"                value="$(arg accel_fps)"/>
         <arg name="enable_gyro"              value="$(arg enable_gyro)"/>
         <arg name="enable_accel"             value="$(arg enable_accel)"/>
-  
+    
         <arg name="filters"                  value="$(arg filters)"/>
         <arg name="clip_distance"            value="$(arg clip_distance)"/>
         <arg name="linear_accel_cov"         value="$(arg linear_accel_cov)"/>
@@ -155,7 +157,8 @@ First you need to run `roscore`.
         <arg name="publish_odom_tf"          value="$(arg publish_odom_tf)"/>
       </include>
     </group>
-  </launch>
+
+</launch>
   ```
 
 * Using ctrl+x and saving the file, you can exit from nano editor.
@@ -354,7 +357,7 @@ First you need to run `roscore`.
     Width: 1920
     X: 0
     Y: 27
-  ```
+```
 
 * Using ctrl+x and saving the file, you can exit from nano editor.
 
@@ -365,22 +368,21 @@ First you need to run `roscore`.
 * and you should now be able to see a cloud point of the scene.
 
 * Now, Lets record the topics that are interested for us.
-
+  
   Following topics are usable in recording dataset
-
-  | Topic name                     | Description                       |
-    | ------------------------------ | --------------------------------- |
-  | /rscamera/depth/image_rect_raw | stream depth image in `img` type  |
-  | /rscamera/color/image_raw      | stream color images in `img` type |
-  | /rscamera/infra1/image_rect_raw | infrared camera 1                 |
-  | /rscamera/infra2/image_rect_raw | infrared camera 2                 |
-  | /rscamera/color/camera_info | Color camera info |
-  | /rscamera/depth/camera_info | Depth camera info |
-  | /rscamera/extrinsics/depth_to_color | Camera properties |
-  | /rscamera/extrinsics/depth_to_infra1 | Camera properties |
-  | /rscamera/extrinsics/depth_to_infra2 | Camera properties |
-  | /rscamera/depth/color/points | Point cloud in `PointCloud2` type |
-
+  
+  | Topic name                           | Description                       |
+  | ------------------------------------ | --------------------------------- |
+  | /rscamera/depth/image_rect_raw       | stream depth image in `img` type  |
+  | /rscamera/color/image_raw            | stream color images in `img` type |
+  | /rscamera/infra1/image_rect_raw      | infrared camera 1                 |
+  | /rscamera/infra2/image_rect_raw      | infrared camera 2                 |
+  | /rscamera/color/camera_info          | Color camera info                 |
+  | /rscamera/depth/camera_info          | Depth camera info                 |
+  | /rscamera/extrinsics/depth_to_color  | Camera properties                 |
+  | /rscamera/extrinsics/depth_to_infra1 | Camera properties                 |
+  | /rscamera/extrinsics/depth_to_infra2 | Camera properties                 |
+  | /rscamera/depth/color/points         | Point cloud in `PointCloud2` type |
 
 * In order to record all of the following topics, we issue the following command .
 
@@ -389,4 +391,3 @@ First you need to run `roscore`.
   ```
 
 * as soon as you issue the above command, ROS will start record your dataset.
-
